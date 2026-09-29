@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vastra – Shop</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vas<span>tra</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart</a>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="page-banner">
+  <div class="page-banner-content">
+    <h1>#stayhome</h1>
+    <p>Save more with coupons &amp; up to 70% off!</p>
+  </div>
+</div>
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <h2 class="section-title">All Products</h2>
+    <p class="section-sub">Summer Collection · New Modern Design</p>
+    <div class="shop-grid">
+
+      <div class="product-card" data-product='{"id":"s1","name":"Bandhani Block Shirt","brand":"Vastra","price":1499,"img":"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400&q=80" alt="Bandhani Block Shirt"/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Bandhani Block Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,499</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s2","name":"Kantha Floral Kurta","brand":"Nirmaan","price":2199,"img":"https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&q=80" alt="Kantha Floral Kurta"/></div>
+        <div class="product-info"><p class="product-brand">Nirmaan</p><p class="product-name">Kantha Floral Kurta</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹2,199</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s3","name":"Ikat Print Formal Shirt","brand":"Kala Collective","price":1899,"img":"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&q=80" alt="Ikat Print Formal Shirt"/></div>
+        <div class="product-info"><p class="product-brand">Kala Collective</p><p class="product-name">Ikat Print Formal Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,899</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s4","name":"Chanderi Straight Pant","brand":"Vastra","price":1299,"img":"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80" alt="Chanderi Straight Pant"/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Chanderi Straight Pant</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,299</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s5","name":"Denim Indigo Jeans","brand":"Nirmaan","price":2499,"img":"https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80" alt="Denim Indigo Jeans"/></div>
+        <div class="product-info"><p class="product-brand">Nirmaan</p><p class="product-name">Denim Indigo Jeans</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹2,499</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s6","name":"Ajrakh Block Skirt","brand":"Kala Collective","price":1699,"img":"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&q=80" alt="Ajrakh Block Skirt"/></div>
+        <div class="product-info"><p class="product-brand">Kala Collective</p><p class="product-name">Ajrakh Block Skirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,699</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s7","name":"Khadi Linen Top","brand":"Vastra","price":999,"img":"https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&q=80" alt="Khadi Linen Top"/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Khadi Linen Top</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹999</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s8","name":"Silk Blend Formal Trousers","brand":"Nirmaan","price":3299,"img":"https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80" alt="Silk Blend Formal Trousers"/></div>
+        <div class="product-info"><p class="product-brand">Nirmaan</p><p class="product-name">Silk Blend Formal Trousers</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹3,299</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s9","name":"Oxford Blue Formal Shirt","brand":"Nirmaan","price":1799,"img":"https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=400&q=80" alt="Oxford Blue Formal Shirt"/></div>
+        <div class="product-info"><p class="product-brand">Nirmaan</p><p class="product-name">Oxford Blue Formal Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,799</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s10","name":"Charcoal Slim Trousers","brand":"Vastra","price":2099,"img":"https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?w=400&q=80" alt="Charcoal Slim Trousers"/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Charcoal Slim Trousers</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹2,099</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s11","name":"Ivory Linen Shirt","brand":"Kala Collective","price":1599,"img":"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" alt="Ivory Linen Shirt"/></div>
+        <div class="product-info"><p class="product-brand">Kala Collective</p><p class="product-name">Ivory Linen Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,599</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+      <div class="product-card" data-product='{"id":"s12","name":"Paisley Print Overshirt","brand":"Vastra","price":2799,"img":"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Paisley Print Overshirt"/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Paisley Print Overshirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹2,799</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+
+    </div>
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#"><i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--summer-bg)">
+  <div class="container">
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Summer Collection · New Modern Design</p>
+    <div class="shop-grid">
+      <div class="product-card" data-product='{"id":"sf1","name":"Bandhani Block Shirt","brand":"Vastra","price":1499,"img":"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=400&q=80" alt=""/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Bandhani Block Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,499</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+      <div class="product-card" data-product='{"id":"sf2","name":"Kantha Floral Kurta","brand":"Nirmaan","price":2199,"img":"https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=400&q=80" alt=""/></div>
+        <div class="product-info"><p class="product-brand">Nirmaan</p><p class="product-name">Kantha Floral Kurta</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹2,199</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+      <div class="product-card" data-product='{"id":"sf3","name":"Ikat Print Formal Shirt","brand":"Kala Collective","price":1899,"img":"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&q=80" alt=""/></div>
+        <div class="product-info"><p class="product-brand">Kala Collective</p><p class="product-name">Ikat Print Formal Shirt</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,899</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+      <div class="product-card" data-product='{"id":"sf4","name":"Chanderi Straight Pant","brand":"Vastra","price":1299,"img":"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80"}'>
+        <div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80" alt=""/></div>
+        <div class="product-info"><p class="product-brand">Vastra</p><p class="product-name">Chanderi Straight Pant</p><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+        <div class="product-footer"><span class="product-price">₹1,299</span><button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h3>Sign Up For Newsletters</h3>
+        <p>Get e-mail updates about our latest shop and <span>special offers.</span></p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" required/>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand footer-section">
+        <a href="index.html" class="logo">Vas<span>tra</span></a>
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 42, Dharampeth Layout, Nagpur – 440 010, Maharashtra, India</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+91 712 234 5678</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>support@vastra.in</span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon – Sat: 10:00 AM – 7:00 PM IST</span></div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <a href="about.html">About Vastra</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-section">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="cart.html">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="footer-section">
+        <h4>Install App</h4>
+        <p style="font-size:0.82rem;margin-bottom:12px;">From App Store or Google Play</p>
+        <div class="app-buttons">
+          <a href="#" class="app-btn"><i class="fab fa-apple"></i><div class="app-btn-text"><small>Download on the</small>App Store</div></a>
+          <a href="#" class="app-btn"><i class="fab fa-google-play"></i><div class="app-btn-text"><small>Get it on</small>Google Play</div></a>
+        </div>
+        <div class="payment-logos">
+          <span>Secured Payment Gateways</span>
+          <span class="pay-badge">VISA</span><span class="pay-badge">Mastercard</span><span class="pay-badge">UPI</span><span class="pay-badge">RuPay</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Vastra Fashion Pvt. Ltd. · Nagpur, Maharashtra · All Rights Reserved</p></div>
+  </div>
+</footer>
+
+<div id="productModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close">✕</button>
+    <div class="modal-grid">
+      <div class="modal-images">
+        <img src="" alt="Product" class="modal-main-img"/>
+        <div class="modal-thumbs">
+          <img src="" class="modal-thumb active" alt="thumb 1"/>
+          <img src="" class="modal-thumb" alt="thumb 2"/>
+          <img src="" class="modal-thumb" alt="thumb 3"/>
+          <img src="" class="modal-thumb" alt="thumb 4"/>
+        </div>
+      </div>
+      <div class="modal-details">
+        <p class="modal-breadcrumb">Home / T-Shirt</p>
+        <h2 class="modal-title">Product Name</h2>
+        <p class="modal-price">₹0</p>
+        <p class="modal-label">Size</p>
+        <select class="modal-select">
+          <option value="">Select Size</option>
+          <option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option>
+        </select>
+        <p class="modal-label">Quantity</p>
+        <div class="modal-qty-row">
+          <input type="number" class="modal-qty" value="1" min="1" max="10"/>
+          <button class="btn btn-primary modal-add-btn" style="flex:1">Add To Cart</button>
+        </div>
+        <div class="modal-desc"><strong>Product Details</strong><br/>Premium Indian craft meets modern silhouette. Handpicked fabrics, ethically sourced from artisan clusters across Maharashtra and Rajasthan. Machine washable, certified organic dyes.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

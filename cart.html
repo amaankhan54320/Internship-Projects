@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vastra – Cart</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vas<span>tra</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="page-banner cart-banner">
+  <div class="page-banner-content">
+    <h1>#cart</h1>
+    <p>Add your coupon code &amp; SAVE up to 70%!</p>
+  </div>
+</div>
+
+<section class="cart-section">
+  <div class="container">
+    <div class="cart-table-wrap">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Remove</th>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+      </table>
+    </div>
+    <div class="cart-bottom">
+      <div>
+        <div class="coupon-row">
+          <input type="text" id="couponInput" placeholder="Enter Your Coupon"/>
+          <button onclick="document.querySelector('.toast').innerHTML='<i class=\'fas fa-tag\'></i> Coupon applied!';document.querySelector('.toast').classList.add('show');setTimeout(()=>document.querySelector('.toast').classList.remove('show'),3000)">Apply</button>
+        </div>
+        <p style="font-size:0.8rem;color:var(--grey-500);margin-top:10px">Free shipping on orders above ₹999</p>
+      </div>
+      <div class="cart-totals">
+        <h3>Cart Totals</h3>
+        <div class="totals-row"><span>Cart Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="totals-row"><span>Shipping</span><span id="cartShipping">Free</span></div>
+        <div class="totals-row total"><span>Total</span><span id="cartTotal">₹0</span></div>
+        <button class="btn btn-green" style="width:100%;margin-top:20px;justify-content:center" id="checkoutBtn">Proceed to Checkout <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h3>Sign Up For Newsletters</h3>
+        <p>Get e-mail updates about our latest shop and <span>special offers.</span></p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" required/>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand footer-section">
+        <a href="index.html" class="logo">Vas<span>tra</span></a>
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 42, Dharampeth Layout, Nagpur – 440 010, Maharashtra, India</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+91 712 234 5678</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>support@vastra.in</span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon – Sat: 10:00 AM – 7:00 PM IST</span></div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <a href="about.html">About Vastra</a><a href="#">Delivery Information</a><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-section">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a><a href="cart.html">View Cart</a><a href="#">My Wishlist</a><a href="#">Track My Order</a><a href="#">Help</a>
+      </div>
+      <div class="footer-section">
+        <h4>Install App</h4>
+        <p style="font-size:0.82rem;margin-bottom:12px;">From App Store or Google Play</p>
+        <div class="app-buttons">
+          <a href="#" class="app-btn"><i class="fab fa-apple"></i><div class="app-btn-text"><small>Download on the</small>App Store</div></a>
+          <a href="#" class="app-btn"><i class="fab fa-google-play"></i><div class="app-btn-text"><small>Get it on</small>Google Play</div></a>
+        </div>
+        <div class="payment-logos"><span>Secured Payment Gateways</span><span class="pay-badge">VISA</span><span class="pay-badge">Mastercard</span><span class="pay-badge">UPI</span><span class="pay-badge">RuPay</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Vastra Fashion Pvt. Ltd. · Nagpur, Maharashtra · All Rights Reserved</p></div>
+  </div>
+</footer>
+
+<div class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
