@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect Four</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== BACKGROUND GRID DECORATION ===== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ===== APP WRAPPER ===== -->
+  <div class="app-wrapper">
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+      <div class="logo-mark" aria-hidden="true">◈</div>
+      <h1 class="site-title">Connect <span>Four</span></h1>
+      <div class="logo-mark" aria-hidden="true">◈</div>
+    </header>
+
+    <!-- ===== SCORE LEDGER ===== -->
+    <section class="score-ledger" aria-label="Score board">
+      <div class="score-card score-card--p1" id="score-card-p1">
+        <div class="score-card__token" aria-hidden="true"></div>
+        <div class="score-card__info">
+          <span class="score-card__label">Player 1</span>
+          <span class="score-card__value" id="score-p1">0</span>
+        </div>
+      </div>
+
+      <div class="score-divider" aria-hidden="true">VS</div>
+
+      <div class="score-card score-card--p2" id="score-card-p2">
+        <div class="score-card__info score-card__info--right">
+          <span class="score-card__label">Player 2</span>
+          <span class="score-card__value" id="score-p2">0</span>
+        </div>
+        <div class="score-card__token" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ===== TURN BANNER ===== -->
+    <div class="turn-banner" id="turn-banner" aria-live="polite" aria-atomic="true">
+      <div class="turn-banner__pip" id="turn-pip" aria-hidden="true"></div>
+      <span id="turn-text">Player 1's Turn</span>
+    </div>
+
+    <!-- ===== GAME BOARD AREA ===== -->
+    <main class="board-area" aria-label="Game board">
+
+      <!-- Column hover preview indicators -->
+      <div class="col-previews" id="col-previews" aria-hidden="true">
+        <!-- 7 preview arrows injected by JS -->
+      </div>
+
+      <!-- The board frame -->
+      <div class="board-frame">
+        <!-- 7 clickable column overlays + 6×7 cell grid injected by JS -->
+        <div class="board-grid" id="board-grid" role="grid" aria-label="Connect Four board, 6 rows by 7 columns">
+        </div>
+
+        <!-- Column click targets injected by JS -->
+        <div class="col-targets" id="col-targets" aria-label="Column selectors"></div>
+      </div>
+
+    </main>
+
+    <!-- ===== ACTION BUTTONS ===== -->
+    <div class="action-row">
+      <button class="btn btn--secondary" id="btn-reset-board" type="button">
+        <span class="btn__icon" aria-hidden="true">↺</span> Reset Board
+      </button>
+      <button class="btn btn--danger" id="btn-reset-all" type="button">
+        <span class="btn__icon" aria-hidden="true">✕</span> Reset All
+      </button>
+    </div>
+
+  </div><!-- /app-wrapper -->
+
+  <!-- ===== WIN / DRAW MODAL ===== -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal">
+      <div class="modal__trophy" id="modal-trophy" aria-hidden="true">🏆</div>
+      <h2 class="modal__title" id="modal-title">Player 1 Wins!</h2>
+      <p class="modal__subtitle" id="modal-subtitle">4 in a row — magnificent!</p>
+      <div class="modal__actions">
+        <button class="btn btn--primary" id="modal-play-again" type="button">Play Again</button>
+        <button class="btn btn--secondary" id="modal-reset-all" type="button">Reset Scores</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

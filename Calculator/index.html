@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <div class="calculator-card">
+
+      <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+          <span class="history-title">History</span>
+          <button class="clear-history-btn" id="clearHistoryBtn" title="Clear history">✕ Clear</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <p class="history-empty" id="historyEmpty">No calculations yet.</p>
+        </div>
+      </div>
+
+      <div class="calc-body">
+
+        <div class="display-area">
+          <div class="history-toggle-row">
+            <button class="history-toggle-btn" id="historyToggleBtn" title="Toggle history">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3h18M3 9h18M3 15h12M3 21h8" />
+              </svg>
+              History
+            </button>
+          </div>
+          <div class="expression-line" id="expressionLine">&nbsp;</div>
+          <div class="result-line" id="resultLine">0</div>
+        </div>
+
+        <div class="keypad">
+
+          <button class="btn btn-func" data-action="ac">AC</button>
+          <button class="btn btn-func" data-action="backspace">⌫</button>
+          <button class="btn btn-advanced" data-action="sqrt">√x</button>
+          <button class="btn btn-operator" data-action="operator" data-value="÷">÷</button>
+
+          <button class="btn btn-advanced" data-action="square">x²</button>
+          <button class="btn btn-advanced" data-action="cube">x³</button>
+          <button class="btn btn-number" data-action="number" data-value="7">7</button>
+          <button class="btn btn-number" data-action="number" data-value="8">8</button>
+
+          <button class="btn btn-number" data-action="number" data-value="9">9</button>
+          <button class="btn btn-operator" data-action="operator" data-value="×">×</button>
+          <button class="btn btn-number" data-action="number" data-value="4">4</button>
+          <button class="btn btn-number" data-action="number" data-value="5">5</button>
+
+          <button class="btn btn-number" data-action="number" data-value="6">6</button>
+          <button class="btn btn-operator" data-action="operator" data-value="-">−</button>
+          <button class="btn btn-number" data-action="number" data-value="1">1</button>
+          <button class="btn btn-number" data-action="number" data-value="2">2</button>
+
+          <button class="btn btn-number" data-action="number" data-value="3">3</button>
+          <button class="btn btn-operator" data-action="operator" data-value="+">+</button>
+          <button class="btn btn-number btn-zero" data-action="number" data-value="0">0</button>
+          <button class="btn btn-number" data-action="decimal">.</button>
+
+          <button class="btn btn-equals" data-action="equals">=</button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
