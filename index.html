@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">◈</span>
+          <span class="logo-text">TaskFlow</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-view="history">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          <span>History</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-stats">
+        <p class="stats-label">Today's Progress</p>
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" width="80" height="80" viewBox="0 0 80 80">
+            <circle class="progress-ring-bg" cx="40" cy="40" r="34" fill="none" stroke-width="6"/>
+            <circle class="progress-ring-fill" id="progressRing" cx="40" cy="40" r="34" fill="none" stroke-width="6" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+          </svg>
+          <span class="progress-pct" id="progressPct">0%</span>
+        </div>
+        <p class="stats-sub" id="statsSub">0 of 0 done</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="mainContent">
+
+      <!-- WORKLOAD STATUS BAR -->
+      <div class="workload-bar" id="workloadBar">
+        <div class="workload-indicator" id="workloadIndicator">
+          <span class="workload-dot" id="workloadDot"></span>
+          <span class="workload-label" id="workloadLabel">No tasks today</span>
+        </div>
+        <div class="bar-right">
+          <div class="live-clock" id="liveClock"></div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+            <span class="theme-icon theme-icon-moon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </span>
+            <span class="theme-icon theme-icon-sun">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- DASHBOARD VIEW -->
+      <div class="view" id="view-dashboard">
+
+        <!-- DATE CAROUSEL -->
+        <section class="date-carousel-section" aria-label="Date navigation">
+          <div class="date-carousel" id="dateCarousel" role="tablist"></div>
+        </section>
+
+        <!-- SELECTED DATE HEADER -->
+        <div class="day-header">
+          <div>
+            <h1 class="day-title" id="dayTitle">Today</h1>
+            <p class="day-subtitle" id="daySubtitle"></p>
+          </div>
+          <button class="btn btn-primary" id="openAddTask">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Task
+          </button>
+        </div>
+
+        <div class="workspace">
+
+          <!-- TASK PANEL -->
+          <section class="task-panel">
+
+            <!-- FILTERS -->
+            <div class="filter-bar">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="active">Active</button>
+              <button class="filter-btn" data-filter="done">Done</button>
+            </div>
+
+            <!-- TASK LIST -->
+            <div class="task-list" id="taskList" role="list">
+              <div class="empty-state" id="emptyState">
+                <div class="empty-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                </div>
+                <p class="empty-title">All clear</p>
+                <p class="empty-sub">No tasks scheduled for this day yet.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SCRATCHPAD (today only) -->
+          <section class="scratchpad-panel" id="scratchpadPanel">
+            <div class="scratchpad-header">
+              <div class="scratchpad-title-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+                <h2>Today's Scratchpad</h2>
+              </div>
+              <span class="scratchpad-saved" id="scratchpadSaved"></span>
+            </div>
+            <textarea
+              class="scratchpad-area"
+              id="scratchpadArea"
+              placeholder="Dump your thoughts, links, quick notes… anything goes. Auto-saves as you type."
+              spellcheck="true"
+              aria-label="Scratchpad"
+            ></textarea>
+            <div class="scratchpad-footer">
+              <span class="scratchpad-chars" id="scratchpadChars">0 characters</span>
+              <button class="btn btn-ghost btn-sm" id="clearScratchpad">Clear</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- HISTORY VIEW -->
+      <div class="view hidden" id="view-history">
+        <div class="history-header">
+          <h1 class="day-title">10-Day History</h1>
+          <p class="day-subtitle">Completed and missed tasks from the past 10 days. Auto-purged after 10 days.</p>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ADD / EDIT TASK MODAL -->
+  <div class="modal-overlay" id="taskModal" role="dialog" aria-modal="true" aria-label="Task editor">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">New Task</h2>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="taskTitle">Task Title <span class="required">*</span></label>
+          <input class="form-input" type="text" id="taskTitle" placeholder="What needs to be done?" maxlength="120" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="taskTime">Target Completion Time</label>
+          <input class="form-input" type="time" id="taskTime">
+        </div>
+        <div class="form-group">
+          <button type="button" class="desc-toggle" id="descToggle" aria-expanded="false" aria-controls="descWrapper">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            Add description / notes
+          </button>
+          <div class="desc-wrapper collapsed" id="descWrapper">
+            <textarea class="form-input form-textarea" id="taskDesc" placeholder="Steps, links, context — whatever helps…" maxlength="1000"></textarea>
+            <p class="char-count"><span id="descCount">0</span>/1000</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Schedule For</label>
+          <div class="schedule-date-display" id="scheduleDateDisplay"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="cancelTask">Cancel</button>
+        <button class="btn btn-primary" id="saveTask">Save Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEADLINE ALERT MODAL -->
+  <div class="modal-overlay alert-overlay" id="alertModal" role="alertdialog" aria-modal="true" aria-live="assertive">
+    <div class="modal alert-modal">
+      <div class="alert-icon-wrap">
+        <div class="alert-pulse"></div>
+        <svg class="alert-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h2 class="alert-title">Deadline Reached</h2>
+      <p class="alert-message" id="alertMessage"></p>
+      <div class="alert-actions">
+        <button class="btn btn-primary" id="alertDone">Mark as Done</button>
+        <button class="btn btn-ghost" id="alertSnooze">Snooze 15 min</button>
+        <button class="btn btn-ghost" id="alertDismiss">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
